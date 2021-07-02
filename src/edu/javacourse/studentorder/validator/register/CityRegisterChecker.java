@@ -1,0 +1,10 @@
+package edu.javacourse.studentorder.validator.register;
+
+import edu.javacourse.studentorder.domain.register.CityRegisterCheckerResponse;
+import edu.javacourse.studentorder.domain.Person;
+import edu.javacourse.studentorder.exception.CityRegisterException;
+
+public interface CityRegisterChecker {
+
+    CityRegisterCheckerResponse chekPerson(Person person) throws CityRegisterException;
+}

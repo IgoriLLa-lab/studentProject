@@ -1,8 +1,10 @@
-package edu.javacourse.studentorder.domain;
+package edu.javacourse.studentorder.domain.register;
+
+import edu.javacourse.studentorder.domain.Person;
 
 import java.time.LocalDate;
 
-public class Child extends Person{
+public class Child extends Person {
 
     private String certificateNumber;
     private LocalDate issueDate;

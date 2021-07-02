@@ -8,9 +8,7 @@ public class Adult extends Person {
     private LocalDate issueDate;
     private String issueDepartment;
     private String university;
-    private int studentId;
-
-    
+    private String studentId;
 
     public Adult(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
         super(surName, givenName, patronymic, dateOfBirth);
@@ -56,11 +54,11 @@ public class Adult extends Person {
         this.university = university;
     }
 
-    public int getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(String  studentId) {
         this.studentId = studentId;
     }
 }

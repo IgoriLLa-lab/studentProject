@@ -1,13 +1,20 @@
 package edu.javacourse.studentorder.domain;
 
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
+import edu.javacourse.studentorder.domain.register.Child;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentOrder {
 
     private long studentOrderId;
     private Adult husband;
     private Adult wife;
-    private Child child;
+    private List<Child> children;
+    private String MarriageCertificateId;
+    private LocalDate MarriageDate;
+    private String MarriageOffice;
 
     public long getStudentOrderId() {
         return studentOrderId;
@@ -33,11 +40,38 @@ public class StudentOrder {
         this.wife = wife;
     }
 
-    public Child getChild() {
-        return child;
+    public List<Child> getChildren() {
+        return children;
     }
 
-    public void setChild(Child child) {
-        this.child = child;
+    public void addChild(Child child) {
+       if (child == null){
+           children = new ArrayList<>(5);
+       }
+       children.add(child);
+    }
+
+    public String getMarriageCertificateId() {
+        return MarriageCertificateId;
+    }
+
+    public void setMarriageCertificateId(String marriageCertificateId) {
+        MarriageCertificateId = marriageCertificateId;
+    }
+
+    public LocalDate getMarriageDate() {
+        return MarriageDate;
+    }
+
+    public void setMarriageDate(LocalDate marriageDate) {
+        MarriageDate = marriageDate;
+    }
+
+    public String getMarriageOffice() {
+        return MarriageOffice;
+    }
+
+    public void setMarriageOffice(String marriageOffice) {
+        MarriageOffice = marriageOffice;
     }
 }
