@@ -1,6 +1,6 @@
 package edu.javacourse.studentorder.domain.register;
 
-public class CityRegisterCheckerResponse {
+public class CityRegisterResponse {
 
    private boolean existing;//зарегистрирован или нет
    private Boolean temporal;//класс обертка, три состояни true false null...поле для временной или постоянной регистрации

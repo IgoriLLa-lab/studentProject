@@ -2,14 +2,24 @@ package edu.javacourse.studentorder;
 
 import edu.javacourse.studentorder.domain.Address;
 import edu.javacourse.studentorder.domain.Adult;
-import edu.javacourse.studentorder.domain.register.Child;
+import edu.javacourse.studentorder.domain.Child;
 import edu.javacourse.studentorder.domain.StudentOrder;
 
+import java.sql.*;
 import java.time.LocalDate;
 
 public class SaveStudentOrder {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/jc_student",
+                "postgres", "postgres"
+                );
 
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM jc_street");
+        while(rs.next()){
+            System.out.println(rs.getLong(1) + " "+ rs.getString(2));
+        }
     }
 
     static long saveStudentOrder(StudentOrder studentOrder) {
@@ -55,6 +65,7 @@ public class SaveStudentOrder {
         child2.setCertificateNumber("" + (40000 + id));
         child2.setIssueDate(LocalDate.of(2018, 7, 19));
         child2.setIssueDepartment("Отдел ЗАГС № " + id);
+        child2.setAddress(address);
 
         so.setHusband(husband);
         so.setWife(wife);

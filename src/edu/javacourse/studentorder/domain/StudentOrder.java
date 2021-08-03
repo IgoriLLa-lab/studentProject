@@ -1,7 +1,5 @@
 package edu.javacourse.studentorder.domain;
 
-import edu.javacourse.studentorder.domain.register.Child;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

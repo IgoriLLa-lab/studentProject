@@ -37,7 +37,7 @@ public class StudentOrderValidator {
     }
 
     public void checkAll() {
-        List<StudentOrder> soList = new LinkedList<>();
+        List<StudentOrder> soList = readStudentOrders();
 
         for (StudentOrder so: soList){
             checkOneOrder(so);
