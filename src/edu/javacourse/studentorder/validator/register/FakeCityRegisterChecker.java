@@ -25,7 +25,7 @@ public class FakeCityRegisterChecker implements CityRegisterChecker {
 
         if (person instanceof Adult) {
             Adult t = (Adult) person;// приведение объекта person к Adult
-            String ps = t.getPassportSerial();
+            String ps = t.getPassportSeria();
             if (ps.equals(GOOD_1) || ps.equals(GOOD_2)) {
                 res.setExisting(true);
                 res.setTemporal(false);
